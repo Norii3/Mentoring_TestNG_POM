@@ -9,7 +9,7 @@ import pages.ABTransactionPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
-import static utilities.Driver.driver;
+//import static utilities.Driver.driver;
 
 public class F15T2_BankingApplication {
 
@@ -33,7 +33,7 @@ public class F15T2_BankingApplication {
             customerManagement.process.click();
             //Verify account creation success
             Assert.assertTrue(true,"Account created successfully with account Number");
-            driver.switchTo().alert().accept();
+            Driver.getDriver().switchTo().alert().accept();
         }
         customerManagement.home.click();
 
