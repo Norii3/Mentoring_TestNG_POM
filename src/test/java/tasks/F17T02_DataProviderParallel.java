@@ -1,11 +1,15 @@
 package tasks;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.DPSearchPageParallelTesting;
 import utilities.Driver;
+
+import java.time.Duration;
 
 public class F17T02_DataProviderParallel {
     /*
@@ -27,7 +31,6 @@ public class F17T02_DataProviderParallel {
         DPSearchPageParallelTesting searchPage = new DPSearchPageParallelTesting();
 
         Driver.getDriver().get("https://www.bing.com");
-
         searchPage
                 .clickSearchBox()
                 .enterSearchTerms(searchTerm)
@@ -37,14 +40,14 @@ public class F17T02_DataProviderParallel {
 
     }
 
-    @DataProvider(name = "searchTerms")
+    @DataProvider(name = "searchTerms", parallel = true)
     public Object[][] dPSearchTerms(){
         return new Object[][]{
-                {"AI"},
-                {"Selenium WebDriver"},
-                {"TestNG Framework"},
-                {"Parallel Execution"},
-                {"Maven Project"}
+                {"hello"},
+                {"book"},
+                {"water"},
+                {"moon"},
+                {"tree"}
         };
     }
 }

@@ -10,7 +10,7 @@ import java.time.Duration;
 
 public class DPSearchPageParallelTesting {
     private By searchBox = By.xpath("//textarea[@name='q']");
-    private By searchResults = By.xpath("//div[@id='b_tween']");
+    private By searchResults = By.xpath("//div[@id='b_content']");
 
 
 
@@ -25,7 +25,7 @@ public class DPSearchPageParallelTesting {
     }
 
     public DPSearchPageParallelTesting assertSearchResult() {
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(15));
         wait.until(ExpectedConditions.visibilityOfElementLocated(searchResults));
         assert Driver.getDriver().findElement(searchResults).isDisplayed();
         return this;
