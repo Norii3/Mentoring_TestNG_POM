@@ -29,4 +29,25 @@ public class DataProviderUtilities {
         };
     }
 
+    @DataProvider(name = "faker2", parallel = true)
+    public Object[][] getFakeData() {
+        Faker faker = new Faker();
+        return new Object[][]{
+                {faker.name().firstName(), faker.name().lastName(), faker.internet().emailAddress(), faker.internet().password()},
+                {faker.name().firstName(), faker.name().lastName(), faker.internet().emailAddress(), faker.internet().password()},
+                {faker.name().firstName(), faker.name().lastName(), faker.internet().emailAddress(), faker.internet().password()},
+                {faker.name().firstName(), faker.name().lastName(), faker.internet().emailAddress(), faker.internet().password()},
+                {faker.name().firstName(), faker.name().lastName(), faker.internet().emailAddress(), faker.internet().password()},
+        };
+    }
+
+    @DataProvider(name = "tableData")
+    public Object[][] provideTableData() {
+        return new Object[][]{
+                {"John", "28", "USA"},
+                {"Alice", "30", "Canada"},
+                {"Bob", "25", "UK"}
+        };
+    }
+
 }

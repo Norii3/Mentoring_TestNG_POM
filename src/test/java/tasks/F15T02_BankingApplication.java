@@ -1,4 +1,4 @@
-package tests;
+package tasks;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -11,7 +11,7 @@ import utilities.Driver;
 
 //import static utilities.Driver.driver;
 
-public class F15T2_BankingApplication {
+public class F15T02_BankingApplication {
 
     @Test
     void bATest() throws InterruptedException {

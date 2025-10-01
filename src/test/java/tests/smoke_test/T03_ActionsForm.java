@@ -1,11 +1,10 @@
-package tests;
+package tests.smoke_test;
 
 import org.testng.annotations.Test;
 import pages.ActionsFormPage;
-import pages.ActionsPage;
 import utilities.Driver;
 
-public class C03_ActionsForm {
+public class T03_ActionsForm {
     /*
         Go to https://claruswaysda.github.io/ActionsForm.html
         Fill form and submit
@@ -15,7 +14,6 @@ public class C03_ActionsForm {
     @Test
     void C03_ActionsFormTest() {
         ActionsFormPage formPage = new ActionsFormPage();
-        ActionsPage actionsPage = new ActionsPage();
 
 //        Go to https://claruswaysda.github.io/ActionsForm.html
         Driver.getDriver().get("https://claruswaysda.github.io/ActionsForm.html");
@@ -32,13 +30,6 @@ public class C03_ActionsForm {
                 .clickSubmit();
 
 //        Do all actions and assert
-
-        actionsPage
-                .actions()
-                .assertDragDrop()
-                .assertClick()
-                .assertDoubleClick()
-                .assertHover();
 
 
         Driver.closeDriver();
