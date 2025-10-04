@@ -1,5 +1,7 @@
 package pages;
 
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -44,6 +46,7 @@ public class CLRegistrationPage {
         return this;
     }
 
+    @Severity(SeverityLevel.CRITICAL)
     public CLContactListPage clickSubmit() {
         Driver.getDriver().findElement(submit).click();
         return new CLContactListPage();
